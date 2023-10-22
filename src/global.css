@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* Custom Ag Grid CSS */
+.ag-theme-alpine {
+  /* Header */
+  --ag-header-background-color: var(--white-12);
+  /* Row */
+  --ag-row-hover-color: var(--teal-2);
+  --ag-selected-row-background-color: var(--teal-3);
+  --ag-range-selection-border-color: var(--teal-7);
+}
