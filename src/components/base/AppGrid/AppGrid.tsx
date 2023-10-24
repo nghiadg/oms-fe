@@ -74,7 +74,6 @@ export const AppGridBase = <TData,>(
         noRowsOverlayComponent={noRowsOverlayComponent ?? EmptyOverlay}
         loadingOverlayComponent={loadingOverlayComponent ?? LoadingOverlay}
         {...props}
-        rowData={[]}
       />
     </div>
   )
