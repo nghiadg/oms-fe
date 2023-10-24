@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { Button, Tooltip } from "@radix-ui/themes"
-import { styles } from "./AppButton.styles"
+import { btnCss } from "./AppButton.css"
 import { IAppButtonProps } from "./AppButton.type"
 import { cx } from "@emotion/css"
 
@@ -15,7 +15,7 @@ export const AppButton: FC<IAppButtonProps> = ({
 }) => {
   const renderButton = () => {
     return (
-      <Button className={cx(styles, className)} {...props}>
+      <Button className={cx(btnCss, className)} {...props}>
         {iconPlacement === "start" && icon}
         {label}
         {children}

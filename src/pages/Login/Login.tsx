@@ -3,13 +3,13 @@ import { AppCard } from "../../components/base/AppCard"
 import { AppInput } from "../../components/base/AppInput"
 import { Flex, Link, Text } from "@radix-ui/themes"
 import { AppButton } from "../../components/base/AppButton"
-import { boxStyle, containerStyle } from "./Login.styles"
+import { boxCss, containerCss } from "./Login.css"
 import { GitHubLogoIcon } from "@radix-ui/react-icons"
 
 export const Login = () => {
   return (
-    <Flex className={containerStyle} align="center" justify="center">
-      <AppCard size="2" className={boxStyle}>
+    <Flex className={containerCss} align="center" justify="center">
+      <AppCard size="2" className={boxCss}>
         <Text as="div" align="center" mt="5">
           <GitHubLogoIcon width={64} height={64} />
         </Text>

@@ -9,6 +9,7 @@ import { AppCard } from "../../components/base/AppCard"
 import { SunIcon } from "@radix-ui/react-icons"
 import { AppGrid } from "../../components/base/AppGrid"
 import { useAlertDialog } from "../../components/base/AppAlertDialog/context/AppAlertDialogContext"
+import { SideNavigationBar } from "../../components/common/SideNavigationBar"
 
 export const Theme = () => {
   const { alertAPI } = useAlertDialog()
@@ -23,6 +24,7 @@ export const Theme = () => {
 
   return (
     <Flex direction="column" gap="2">
+      <SideNavigationBar />
       <AppButton icon={<SunIcon />} label="日本語" tooltip="日本語" onClick={openAlert} />
       <AppInput prefix="&" />
       <AppInput err="Error message hint" prefix="%" />
@@ -34,7 +36,7 @@ export const Theme = () => {
       <AppTextArea />
       <AppTextArea err="Error message" />
       <AppCard>AppCard</AppCard>
-      <AppCard isShadow>App Card isShadow</AppCard>
+      <AppCard shadow>App Card isShadow</AppCard>
       <div style={{ height: 300 }}>
         <AppGrid />
       </div>

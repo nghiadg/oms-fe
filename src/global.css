@@ -5,16 +5,27 @@
   font-family: "Roboto", sans-serif;
 }
 
+/* variable */
+:root {
+  --neon: #34dba1;
+}
+
 body {
   margin: 0;
 }
 
 /* Custom Ag Grid CSS */
 .ag-theme-alpine {
+  --ag-borders: none;
+  --ag-row-border-width: 1px;
   /* Header */
-  --ag-header-background-color: var(--white-12);
+  --ag-header-background-color: var(--gray-2);
   /* Row */
   --ag-row-hover-color: var(--teal-2);
   --ag-selected-row-background-color: var(--teal-3);
   --ag-range-selection-border-color: var(--teal-7);
+}
+
+.ag-theme-alpine .ag-header {
+  border-bottom: 1px solid var(--ag-secondary-border-color);
 }

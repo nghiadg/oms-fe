@@ -1,7 +1,7 @@
 import { AlertDialog, Box, Flex } from "@radix-ui/themes"
 import React, { useCallback, useMemo } from "react"
 import { AppButton } from "../AppButton"
-import { contentStyle, iconStyle, signalStyle } from "./AppAlertDialog.styles"
+import { contentCss, iconCss, signalCss } from "./AppAlertDialog.css"
 import { CheckIcon, ExclamationTriangleIcon, QuestionMarkIcon, Cross2Icon } from "@radix-ui/react-icons"
 import { IAppAlertDialogProps } from "./AppAlertDialog.type"
 import { ulid } from "ulid"
@@ -51,11 +51,11 @@ export const AppAlertDialog = ({
 
   return (
     <AlertDialog.Root defaultOpen={true} {...props}>
-      <AlertDialog.Content size="1" className={contentStyle}>
-        <div className={signalStyle(type)} />
+      <AlertDialog.Content size="1" className={contentCss}>
+        <div className={signalCss(type)} />
         <Box p="3" pt="5">
           <Flex gap="4">
-            <div className={iconStyle(type)}>{renderIcon()}</div>
+            <div className={iconCss(type)}>{renderIcon()}</div>
             <div>
               <AlertDialog.Title size="3">{title}</AlertDialog.Title>
               <AlertDialog.Description size="1">{description}</AlertDialog.Description>
