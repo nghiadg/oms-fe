@@ -1,10 +1,10 @@
+// Ag Grid
+import "ag-grid-community/styles/ag-grid.css" // Core grid CSS, always needed
+import "ag-grid-community/styles/ag-theme-alpine.css" // Optional theme CSS
 // CSS
 import "./global.css"
 import { Theme } from "@radix-ui/themes"
 import "@radix-ui/themes/styles.css"
-// Ag Grid
-import "ag-grid-community/styles/ag-grid.css" // Core grid CSS, always needed
-import "ag-grid-community/styles/ag-theme-alpine.css" // Optional theme CSS
 
 import React from "react"
 import ReactDOM from "react-dom/client"

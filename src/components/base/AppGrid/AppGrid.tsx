@@ -1,6 +1,6 @@
 import { AgGridReact } from "ag-grid-react"
 import React, { forwardRef, useRef, useCallback, useImperativeHandle, Ref } from "react"
-import { styles, wrapperStyle } from "./AppGrid.styles"
+import { wrapperCss } from "./AppGrid.css"
 import { LoadingOverlay } from "./components/LoadingOverlay"
 import { EmptyOverlay } from "./components/EmptyOverlay"
 import { IRowNode } from "ag-grid-community"
@@ -8,7 +8,7 @@ import { IAppGridProps, TAppGrid } from "./AppGrid.type"
 import { cx } from "@emotion/css"
 
 export const AppGridBase = <TData,>(
-  { className, gridOptions, noRowsOverlayComponent, loadingOverlayComponent, ...props }: IAppGridProps,
+  { gridOptions, noRowsOverlayComponent, loadingOverlayComponent, ...props }: IAppGridProps,
   ref: Ref<TAppGrid<TData>>,
 ) => {
   const gridRef = useRef<AgGridReact | null>(null)
@@ -63,18 +63,18 @@ export const AppGridBase = <TData,>(
   )
 
   return (
-    <div className={cx("ag-theme-alpine", wrapperStyle)}>
+    <div className={cx("ag-theme-alpine", wrapperCss)}>
       <AgGridReact
         ref={gridRef}
-        className={cx(styles, className)}
         gridOptions={{
-          rowHeight: 40,
+          rowHeight: 56,
           headerHeight: 40,
           ...gridOptions,
         }}
         noRowsOverlayComponent={noRowsOverlayComponent ?? EmptyOverlay}
         loadingOverlayComponent={loadingOverlayComponent ?? LoadingOverlay}
         {...props}
+        rowData={[]}
       />
     </div>
   )

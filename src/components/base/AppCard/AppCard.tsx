@@ -1,12 +1,12 @@
 import { Card } from "@radix-ui/themes"
 import React from "react"
 import { IAppCardProps } from "./AppCard.type"
-import { styles } from "./AppCard.styles"
+import { cardCss } from "./AppCard.css"
 import { cx } from "@emotion/css"
 
-export const AppCard = ({ isShadow, className, children, ...props }: IAppCardProps) => {
+export const AppCard = ({ shadow, className, children, ...props }: IAppCardProps) => {
   return (
-    <Card className={cx(styles(isShadow), className)} {...props}>
+    <Card className={cx(cardCss(shadow), className)} {...props}>
       {children}
     </Card>
   )
