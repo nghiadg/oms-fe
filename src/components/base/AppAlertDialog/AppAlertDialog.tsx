@@ -18,7 +18,6 @@ export const AppAlertDialog = ({
   confirmLabel = "Xác nhận",
   type = "warning",
   icon,
-  contentProps,
   ...props
 }: IAppAlertDialogProps) => {
   const renderIcon = useCallback(() => {
@@ -51,7 +50,7 @@ export const AppAlertDialog = ({
 
   return (
     <AlertDialog.Root {...props}>
-      <AlertDialog.Content size="1" className={contentCss} {...contentProps}>
+      <AlertDialog.Content size="1" className={contentCss}>
         <div className={signalCss(type)} />
         <Box p="3" pt="5">
           <Flex gap="4">
