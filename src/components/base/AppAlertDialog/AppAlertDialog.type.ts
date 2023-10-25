@@ -1,11 +1,16 @@
 import { ReactNode, MouseEvent } from "react"
 import { IAppButtonProps } from "../AppButton"
+import { AlertDialogRootProps } from "@radix-ui/themes/dist/cjs/components/alert-dialog"
 
-export interface IAppAlertDialogButton extends IAppButtonProps {}
+export interface IAppAlertDialogButton extends IAppButtonProps {
+  btnCd: AppAlertDialogButtonCode | string
+}
 
 export type AppAlertDialogType = "error" | "warning" | "success" | "info"
 
-export interface IAppAlertDialogProps {
+export type AppAlertDialogButtonCode = "close" | "ok"
+
+export interface IAppAlertDialogProps extends AlertDialogRootProps {
   title: string
   description: string
   content?: ReactNode
@@ -16,6 +21,7 @@ export interface IAppAlertDialogProps {
   confirmLabel?: string
   icon?: ReactNode
   type?: AppAlertDialogType
-  onClose?: (key: string) => void
+  // Only use for dialog queue
+  onClose?: (btnCd: AppAlertDialogButtonCode | string) => void
   id?: string
 }

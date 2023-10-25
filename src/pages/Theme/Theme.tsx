@@ -8,18 +8,26 @@ import { AppTextArea } from "../../components/base/AppTextArea"
 import { AppCard } from "../../components/base/AppCard"
 import { SunIcon } from "@radix-ui/react-icons"
 import { AppGrid } from "../../components/base/AppGrid"
-import { useAlertDialog } from "../../components/base/AppAlertDialog/context/AppAlertDialogContext"
 import { SideNavigationBar } from "../../components/common/SideNavigationBar"
+import { dialogApi } from "../../components/base/AppAlertDialog"
 
 export const Theme = () => {
-  const { alertAPI } = useAlertDialog()
-
-  const openAlert = () => {
-    alertAPI.open({
+  const openAlert = async () => {
+    const res = await dialogApi.open({
       title: "Confirm delete?",
       description: "Welcome to world",
       type: "error",
+      buttons: [
+        {
+          btnCd: "btncd",
+          onClick: () => {},
+        },
+      ],
     })
+
+    console.log({ res })
+
+    // Do something continue => dialog hell
   }
 
   return (
