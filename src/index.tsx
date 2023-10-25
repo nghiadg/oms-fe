@@ -15,10 +15,9 @@ import { AppAlertDialogQueue } from "./components/base/AppAlertDialog"
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
   <React.StrictMode>
-    <Theme radius="small" accentColor="teal">
-      <AppAlertDialogQueue>
-        <Main />
-      </AppAlertDialogQueue>
+    <Theme radius="small" accentColor="indigo">
+      <Main />
+      <AppAlertDialogQueue />
     </Theme>
   </React.StrictMode>,
 )

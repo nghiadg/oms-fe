@@ -18,7 +18,7 @@ export const AppAlertDialog = ({
   confirmLabel = "Xác nhận",
   type = "warning",
   icon,
-  id = "",
+  contentProps,
   ...props
 }: IAppAlertDialogProps) => {
   const renderIcon = useCallback(() => {
@@ -50,8 +50,8 @@ export const AppAlertDialog = ({
   }, [])
 
   return (
-    <AlertDialog.Root defaultOpen={true} {...props}>
-      <AlertDialog.Content size="1" className={contentCss}>
+    <AlertDialog.Root {...props}>
+      <AlertDialog.Content size="1" className={contentCss} {...contentProps}>
         <div className={signalCss(type)} />
         <Box p="3" pt="5">
           <Flex gap="4">
@@ -65,17 +65,17 @@ export const AppAlertDialog = ({
 
           <Flex justify="end" gap="3" mt="3">
             {buttons.length > 0 ? (
-              buttons.map((props) => (
-                <AlertDialog.Action key={ulid()} onClick={() => onClose?.(id)}>
+              buttons.map(({ btnCd, ...props }) => (
+                <AlertDialog.Action key={ulid()} onClick={() => onClose?.(btnCd)}>
                   <AppButton {...props} />
                 </AlertDialog.Action>
               ))
             ) : (
               <>
-                <AlertDialog.Action onClick={() => onClose?.(id)}>
+                <AlertDialog.Action onClick={() => onClose?.("close")}>
                   <AppButton label={cancelLabel} color="gray" variant="soft" onClick={onCancel} />
                 </AlertDialog.Action>
-                <AlertDialog.Action onClick={() => onClose?.(id)}>
+                <AlertDialog.Action onClick={() => onClose?.("ok")}>
                   <AppButton label={confirmLabel} color={confirmColor} onClick={onConfirm} />
                 </AlertDialog.Action>
               </>

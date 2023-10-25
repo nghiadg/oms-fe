@@ -2,44 +2,33 @@ import { css } from "@emotion/css"
 
 export const containerCss = css({
   height: "100vh",
-  backgroundColor: "var(--mauve-12)",
+  backgroundColor: "var(--gray-0)",
+  borderRight: "1px solid var(--gray-7)",
 })
 
-export const menuToggleCss = css({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  backgroundColor: "var(--black-a5)",
-})
-
-export const itemCss = (active: boolean = false) =>
+export const menuCss = (active: boolean = false) =>
   css({
     cursor: "pointer",
     height: 40,
+    width: 40,
+    borderRadius: 4,
+    margin: "0 auto",
+    marginBottom: 8,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     transition: "all .2s ease",
     ":hover": {
-      ...(!active && { backgroundColor: "var(--neon)" }),
+      ...(!active && { backgroundColor: "var(--indigo-4)" }),
     },
     //   active
     position: "relative",
     ...(active && {
-      ":after": {
-        content: '""',
-        position: "absolute",
-        left: 0,
-        width: 2,
-        height: "100%",
-        backgroundColor: "var(--neon)",
-      },
+      backgroundColor: "var(--indigo-4)",
     }),
   })
 
-export const iconCss = (active: boolean = false) =>
+export const menuIconCss = (active: boolean = false) =>
   css({
-    color: active ? "var(--neon)" : "var(--gray-1)",
+    color: active ? "var(--indigo-12)" : "var(--gray-10)",
   })
-
-export const menuListCss = css({})
