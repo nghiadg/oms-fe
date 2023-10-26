@@ -1,12 +1,12 @@
+import { Flex, Link, Text } from "@radix-ui/themes"
 import React from "react"
 import { AppCard } from "../../components/base/AppCard"
-import { AppInput } from "../../components/base/AppInput"
-import { Flex, Link, Text } from "@radix-ui/themes"
-import { AppButton } from "../../components/base/AppButton"
-import { boxCss, containerCss } from "./Login.css"
 import { GitHubLogoIcon } from "@radix-ui/react-icons"
+import { AppInput } from "../../components/base/AppInput"
+import { AppButton } from "../../components/base/AppButton"
+import { boxCss, containerCss } from "./RegisterAccount.css"
 
-export const Login = () => {
+export const RegisterAccount = () => {
   return (
     <Flex className={containerCss} align="center" justify="center">
       <AppCard size="2" className={boxCss} shadow>
@@ -24,13 +24,19 @@ export const Login = () => {
             <Text as="div" size="2" mb="1">
               Mật khẩu
             </Text>
-            <AppInput err="Mật khẩu phải có 6-8 ký tự" placeholder="Mật khẩu" type="password" />
-            <Link size="1">Quên mật khẩu?</Link>
+            <AppInput placeholder="Mật khẩu" />
           </div>
-          <AppButton label="Đăng Nhập" />
+          <div>
+            <Text as="div" size="2" mb="1">
+              Nhập lại mật khẩu
+            </Text>
+            <AppInput placeholder="Mật khẩu" />
+          </div>
+
+          <AppButton label="Đăng ký" />
           <Text size="1" mt="6" align="center">
-            Chưa có tài khoản?&nbsp;
-            <Link size="1">Đăng ký</Link>
+            Đã có tài khoản?&nbsp;
+            <Link size="1">Đăng nhập</Link>
           </Text>
         </Flex>
       </AppCard>
