@@ -8,15 +8,15 @@ import "@radix-ui/themes/styles.css"
 
 import React from "react"
 import ReactDOM from "react-dom/client"
-import { Main } from "./Main"
 import reportWebVitals from "./reportWebVitals"
 import { AppAlertDialogQueue } from "./components/base/AppAlertDialog"
+import { RouterManager } from "./router"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
   <React.StrictMode>
     <Theme radius="small" accentColor="indigo">
-      <Main />
+      <RouterManager />
       <AppAlertDialogQueue />
     </Theme>
   </React.StrictMode>,

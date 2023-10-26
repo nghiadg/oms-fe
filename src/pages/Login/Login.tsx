@@ -9,7 +9,7 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons"
 export const Login = () => {
   return (
     <Flex className={containerCss} align="center" justify="center">
-      <AppCard size="2" className={boxCss}>
+      <AppCard size="2" className={boxCss} shadow>
         <Text as="div" align="center" mt="5">
           <GitHubLogoIcon width={64} height={64} />
         </Text>
