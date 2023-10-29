@@ -11,6 +11,8 @@ import ReactDOM from "react-dom/client"
 import reportWebVitals from "./reportWebVitals"
 import { AppAlertDialogQueue } from "./components/base/AppAlertDialog"
 import { RouterManager } from "./routers"
+import { Provider } from "jotai"
+import { appStore } from "./stores/store"
 
 // Axios config
 import "./axios.config"
@@ -18,10 +20,12 @@ import "./axios.config"
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
   <React.StrictMode>
-    <Theme radius="small" accentColor="indigo">
-      <RouterManager />
-      <AppAlertDialogQueue />
-    </Theme>
+    <Provider store={appStore}>
+      <Theme radius="small" accentColor="indigo">
+        <RouterManager />
+        <AppAlertDialogQueue />
+      </Theme>
+    </Provider>
   </React.StrictMode>,
 )
 

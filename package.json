@@ -16,9 +16,11 @@
     "ag-grid-community": "^30.2.0",
     "ag-grid-react": "^30.2.0",
     "axios": "^1.5.1",
+    "humps": "^2.0.1",
     "jotai": "^2.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.47.0",
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.4.2",
@@ -53,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/humps": "^2.0.5",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "eslint": "^8.52.0",

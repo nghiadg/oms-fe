@@ -43,3 +43,7 @@ export const signalCss = (type: AppAlertDialogType) =>
     borderTopRightRadius: "var(--radius-4)",
     ...bgColorCss(type),
   })
+
+export const btnCss = css({
+  minWidth: 78,
+})
