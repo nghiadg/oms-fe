@@ -16,7 +16,7 @@ export const RouterManager = () => {
         <Route path={Page.RegisterAccount} element={<RegisterAccount />} />
         <Route path={Page.Theme} element={<Theme />} />
         <Route element={<RequireAuth />}>
-          <Route path={Page.Home} />
+          <Route path={Page.Home} element={<div>Page is developing</div>} />
         </Route>
       </Routes>
     </BrowserRouter>

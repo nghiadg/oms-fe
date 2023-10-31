@@ -1,10 +1,11 @@
 import { AlertDialog, Box, Flex } from "@radix-ui/themes"
 import React, { useCallback, useMemo } from "react"
 import { AppButton } from "../AppButton"
-import { contentCss, iconCss, signalCss } from "./AppAlertDialog.css"
+import { btnCss, contentCss, iconCss, signalCss } from "./AppAlertDialog.css"
 import { CheckIcon, ExclamationTriangleIcon, QuestionMarkIcon, Cross2Icon } from "@radix-ui/react-icons"
 import { IAppAlertDialogProps } from "./AppAlertDialog.type"
 import { ulid } from "ulid"
+import { cx } from "@emotion/css"
 
 export const AppAlertDialog = ({
   title,
@@ -64,18 +65,18 @@ export const AppAlertDialog = ({
 
           <Flex justify="end" gap="3" mt="3">
             {buttons.length > 0 ? (
-              buttons.map(({ btnCd, ...props }) => (
+              buttons.map(({ btnCd, className, ...props }) => (
                 <AlertDialog.Action key={ulid()} onClick={() => onClose?.(btnCd)}>
-                  <AppButton {...props} />
+                  <AppButton className={cx(btnCss, className)} {...props} />
                 </AlertDialog.Action>
               ))
             ) : (
               <>
                 <AlertDialog.Action onClick={() => onClose?.("close")}>
-                  <AppButton label={cancelLabel} color="gray" variant="soft" onClick={onCancel} />
+                  <AppButton label={cancelLabel} color="gray" variant="soft" onClick={onCancel} className={btnCss} />
                 </AlertDialog.Action>
                 <AlertDialog.Action onClick={() => onClose?.("ok")}>
-                  <AppButton label={confirmLabel} color={confirmColor} onClick={onConfirm} />
+                  <AppButton label={confirmLabel} color={confirmColor} onClick={onConfirm} className={btnCss} />
                 </AlertDialog.Action>
               </>
             )}
