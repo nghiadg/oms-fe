@@ -70,7 +70,9 @@ export const Login = () => {
               <AppButton label="Đăng Nhập" type="submit" />
               <Text size="1" mt="6" align="center">
                 Chưa có tài khoản?&nbsp;
-                <Link size="1">Đăng ký</Link>
+                <Link size="1" onClick={() => navigate(Page.RegisterAccount)}>
+                  Đăng ký
+                </Link>
               </Text>
             </Flex>
           </AppCard>
